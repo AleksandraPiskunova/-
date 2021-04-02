@@ -56,7 +56,7 @@ def write_file(): # создаем новые файлы
     with open(path_to_new_file, 'w', encoding='utf-8') as writefile: # записываем в новые файлы словари, т.е. абонентов
         parsed_abonents = parse_text() # получаем список словарей, т.е. абонентов
         for abonent in parsed_abonents: # проходимся по каждому словарю, т.е. абоненту, и записываем их ФИО, телефонный номер и адрес (см. ниже)
-            abonent = ("{} {} {}, {}, {}\n".format(abonent["Surname"], abonent["Name"], abonent["Patronym"], abonent["Phone Number"], abonent["Address"]))
+            abonent = ("{} {} {}, {}, {}\n".format(abonent["Surname"], abonent["Name"], abonent["Patronym"], abonent["Address"], abonent["Phone Number"]))
             writefile.write(abonent)
 
 
