@@ -37,7 +37,7 @@ def parse_text(): # парсим файлы
             phone_number = re.sub(r"O|О", r"0", wrong_phone_number) # исправляем возможные ошибки при распознавании телефонных номеров
             phone_number = re.sub(r"З", r"3", phone_number) # исправляем
             phone_number = re.sub(r"б", r"6", phone_number) # продолжаем исправлять
-            phone_number = re.sub(r"[:'^\s]", r"", phone_number) # все еще исправляем
+            phone_number = re.sub(r"[:'^\.,\s]", r"", phone_number) # все еще исправляем
             phone_number = re.sub(r"--", r"-", phone_number) # почти закончили, но еще исправляем
 
         addresses = re.findall(r"(?<=\s)([А-ЯЁ\w\d]\s?[А-ЯЁ\w\d]\s)([А-ЯЁа-яё\d\w]+.*)(?=\s[А-ЯЁ]+\d?-)", abonent) # ищем адреса
